@@ -7,7 +7,9 @@ const router: Router = Router();
 
 router.use('/auth', AuthRouter);
 
-router.get('/');
+router.get('/', (req, res) => {
+  return res.send('Users')
+});
 
 router.get('/:id', async (req: Request, res: Response) => {
   const {id} = req.params;
